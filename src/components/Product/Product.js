@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./Product.css";
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
   let text = product.description;
   let description = text.slice(0, 100).concat("...");
   return (
@@ -22,7 +22,9 @@ const Product = ({ product }) => {
           </Card.Text>
           <br />
           <br />
-          <Button variant="primary">Buy Now</Button>
+          <Button variant="primary" onClick={() => addToCart(product.title)}>
+            Buy Now
+          </Button>
         </Card.Body>
       </Card>
     </div>
